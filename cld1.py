@@ -777,8 +777,24 @@ with tab3:
         Persen_Baik=("categori", lambda x: (x == "BAIK").mean()*100),
     ).round(1).reset_index()
     stn_summary.columns = ["Stasiun", "Rata-rata ISPU", "Median", "Maks", "Std Dev", "% Tidak Sehat+", "% BAIK"]
-    st.dataframe(stn_summary.style.background_gradient(subset=["Rata-rata ISPU", "% Tidak Sehat+"], cmap="YlOrRd"),
-                 use_container_width=True, hide_index=True)
+    def color_ispu(val):
+        if isinstance(val, float):
+            if val >= 100: return "background-color: #4a1c1c; color: #f87171"
+            elif val >= 75: return "background-color: #3d3010; color: #fbbf24"
+            else: return "background-color: #1a3a20; color: #4ade80"
+        return ""
+
+    def color_pct_unhealthy(val):
+        if isinstance(val, float):
+            if val >= 30: return "background-color: #4a1c1c; color: #f87171"
+            elif val >= 15: return "background-color: #3d2010; color: #f97316"
+            else: return "background-color: #1a3a20; color: #4ade80"
+        return ""
+
+    styled_stn = stn_summary.style \
+        .applymap(color_ispu, subset=["Rata-rata ISPU"]) \
+        .applymap(color_pct_unhealthy, subset=["% Tidak Sehat+"])
+    st.dataframe(styled_stn, use_container_width=True, hide_index=True)
 
     st.markdown("""
     <div class="insight-box">
@@ -1108,8 +1124,16 @@ with tab5:
         apply_dark_theme(fig_bw, height=400)
         st.plotly_chart(fig_bw, use_container_width=True)
 
-        st.dataframe(df_bw.style.background_gradient(subset=["ISPU Terburuk"], cmap="YlOrRd"),
-                     use_container_width=True, hide_index=True)
+        def color_ispu_val(val):
+            if isinstance(val, float):
+                if val >= 100: return "background-color: #4a1c1c; color: #f87171"
+                elif val >= 75: return "background-color: #3d3010; color: #fbbf24"
+                else: return "background-color: #1a3a20; color: #4ade80"
+            return ""
+
+        styled_bw = df_bw.style \
+            .applymap(color_ispu_val, subset=["ISPU Terbaik", "ISPU Terburuk"])
+        st.dataframe(styled_bw, use_container_width=True, hide_index=True)
 
     st.markdown("""
     <div class="insight-box">
