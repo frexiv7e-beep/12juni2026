@@ -32,15 +32,18 @@ st.markdown("""
 
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
+        background-color: #f8fafc;
+        color: #1e293b;
     }
 
     /* Header utama */
     .main-header {
-        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
         border-radius: 16px;
         padding: 28px 36px;
         margin-bottom: 24px;
-        border-left: 5px solid #00d4ff;
+        border-left: 5px solid #93c5fd;
+        box-shadow: 0 4px 20px rgba(37,99,235,0.2);
     }
     .main-header h1 {
         font-family: 'Space Grotesk', sans-serif;
@@ -51,67 +54,68 @@ st.markdown("""
         letter-spacing: -0.5px;
     }
     .main-header p {
-        color: #94b8c9;
+        color: #bfdbfe;
         font-size: 0.92rem;
         margin: 0;
     }
 
     /* KPI card */
     .kpi-card {
-        background: linear-gradient(145deg, #1a2332, #1e2d40);
-        border: 1px solid #2a4060;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 14px;
         padding: 20px 22px;
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .kpi-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(0,212,255,0.12);
+        box-shadow: 0 8px 24px rgba(37,99,235,0.12);
     }
     .kpi-value {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 2.2rem;
         font-weight: 700;
-        color: #00d4ff;
+        color: #2563eb;
         line-height: 1;
         margin-bottom: 6px;
     }
     .kpi-label {
         font-size: 0.78rem;
-        color: #7a9ab5;
-        font-weight: 500;
+        color: #64748b;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.8px;
     }
     .kpi-sub {
         font-size: 0.82rem;
-        color: #b0c8d8;
+        color: #94a3b8;
         margin-top: 4px;
     }
 
     /* Section header */
     .section-header {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 600;
-        color: #d0e8f5;
-        border-bottom: 2px solid #2a4060;
+        color: #1e293b;
+        border-bottom: 2px solid #e2e8f0;
         padding-bottom: 8px;
         margin-bottom: 18px;
     }
 
     /* Insight box */
     .insight-box {
-        background: linear-gradient(135deg, #0d2137, #162b3a);
-        border: 1px solid #1e4060;
-        border-left: 4px solid #00d4ff;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-left: 4px solid #2563eb;
         border-radius: 10px;
         padding: 16px 20px;
         margin-top: 16px;
     }
     .insight-box h4 {
-        color: #00d4ff;
+        color: #1d4ed8;
         font-size: 0.88rem;
         font-weight: 600;
         margin: 0 0 8px 0;
@@ -121,54 +125,65 @@ st.markdown("""
     .insight-box ul {
         margin: 0;
         padding-left: 18px;
-        color: #a8c8de;
+        color: #334155;
         font-size: 0.84rem;
         line-height: 1.7;
     }
     .insight-box li { margin-bottom: 2px; }
 
     /* Badge kategori */
-    .badge-baik       { background:#1a4a2e; color:#4ade80; border:1px solid #22c55e; }
-    .badge-sedang     { background:#3d3010; color:#fbbf24; border:1px solid #f59e0b; }
-    .badge-tidaksehat { background:#4a1c1c; color:#f87171; border:1px solid #ef4444; }
-    .badge-sangat     { background:#3d0f2a; color:#e879f9; border:1px solid #d946ef; }
-    .badge-berbahaya  { background:#2d0a0a; color:#ff6b6b; border:1px solid #dc2626; }
+    .badge-baik       { background:#dcfce7; color:#15803d; border:1px solid #86efac; }
+    .badge-sedang     { background:#fef9c3; color:#a16207; border:1px solid #fde047; }
+    .badge-tidaksehat { background:#fee2e2; color:#b91c1c; border:1px solid #fca5a5; }
+    .badge-sangat     { background:#fae8ff; color:#9333ea; border:1px solid #d8b4fe; }
+    .badge-berbahaya  { background:#fff1f2; color:#be123c; border:1px solid #fda4af; }
     .badge {
         display: inline-block; padding: 3px 10px; border-radius: 20px;
         font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4px;
     }
 
     /* Plotly chart backgrounds */
-    .stPlotlyChart { border-radius: 12px; overflow: hidden; }
+    .stPlotlyChart {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
 
     /* Sidebar */
-    [data-testid="stSidebar"] { background: #0d1b2a; border-right: 1px solid #1e3a50; }
+    [data-testid="stSidebar"] {
+        background: #ffffff;
+        border-right: 1px solid #e2e8f0;
+    }
     [data-testid="stSidebar"] .stSelectbox label,
     [data-testid="stSidebar"] .stMultiselect label,
-    [data-testid="stSidebar"] .stRadio label { color: #94b8c9 !important; font-size: 0.85rem; }
+    [data-testid="stSidebar"] .stRadio label {
+        color: #475569 !important;
+        font-size: 0.85rem;
+    }
 
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
-        background: #0d1b2a;
+        background: #f1f5f9;
         border-radius: 12px 12px 0 0;
         gap: 4px;
         padding: 6px;
     }
     .stTabs [data-baseweb="tab"] {
         background: transparent;
-        color: #7a9ab5;
+        color: #64748b;
         font-weight: 500;
         font-size: 0.88rem;
         border-radius: 8px;
         padding: 8px 18px;
     }
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #0080b3, #005c82) !important;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
         color: #ffffff !important;
     }
 
     /* Divider */
-    hr { border-color: #1e3a50; }
+    hr { border-color: #e2e8f0; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -217,52 +232,52 @@ except FileNotFoundError:
 # ─────────────────────────────────────────────
 # KONSTANTA WARNA & TEMA
 # ─────────────────────────────────────────────
-CHART_BG     = "#0d1b2a"
-PAPER_BG     = "#0a1520"
-GRID_COLOR   = "#1e3a50"
-FONT_COLOR   = "#b0c8d8"
-ACCENT_BLUE  = "#00d4ff"
-ACCENT_AMBER = "#fbbf24"
+CHART_BG     = "#ffffff"
+PAPER_BG     = "#f8fafc"
+GRID_COLOR   = "#e2e8f0"
+FONT_COLOR   = "#334155"
+ACCENT_BLUE  = "#2563eb"
+ACCENT_AMBER = "#d97706"
 
 CAT_COLORS = {
-    "BAIK": "#4ade80",
-    "SEDANG": "#fbbf24",
-    "TIDAK SEHAT": "#f87171",
-    "SANGAT TIDAK SEHAT": "#e879f9",
-    "BERBAHAYA": "#ff2d2d",
+    "BAIK": "#16a34a",
+    "SEDANG": "#ca8a04",
+    "TIDAK SEHAT": "#dc2626",
+    "SANGAT TIDAK SEHAT": "#9333ea",
+    "BERBAHAYA": "#be123c",
 }
 PARAM_COLORS = {
-    "PM10": "#f97316",
-    "PM2.5": "#ef4444",
-    "O3": "#a78bfa",
-    "CO": "#60a5fa",
-    "SO2": "#facc15",
-    "NO2": "#34d399",
+    "PM10": "#ea580c",
+    "PM2.5": "#dc2626",
+    "O3": "#7c3aed",
+    "CO": "#2563eb",
+    "SO2": "#ca8a04",
+    "NO2": "#059669",
 }
 STATION_COLORS = {
-    "DKI1 Bunderan HI"  : "#00d4ff",
-    "DKI2 Kelapa Gading": "#f97316",
-    "DKI3 Jagakarsa"    : "#4ade80",
-    "DKI4 Lubang Buaya" : "#e879f9",
-    "DKI5 Kebon Jeruk"  : "#fbbf24",
+    "DKI1 Bunderan HI"  : "#2563eb",
+    "DKI2 Kelapa Gading": "#ea580c",
+    "DKI3 Jagakarsa"    : "#16a34a",
+    "DKI4 Lubang Buaya" : "#9333ea",
+    "DKI5 Kebon Jeruk"  : "#d97706",
 }
 
 def apply_dark_theme(fig, height=400, showlegend=True):
     fig.update_layout(
         height=height,
         paper_bgcolor=PAPER_BG,
-        plot_bgcolor=CHART_BG,
+        plot_bgcolor="#f8fafc",
         font=dict(color=FONT_COLOR, family="Inter"),
         showlegend=showlegend,
         legend=dict(
-            bgcolor="rgba(13,27,42,0.8)",
+            bgcolor="rgba(255,255,255,0.9)",
             bordercolor=GRID_COLOR,
             borderwidth=1,
-            font=dict(size=11),
+            font=dict(size=11, color=FONT_COLOR),
         ),
         margin=dict(l=50, r=20, t=50, b=50),
-        xaxis=dict(gridcolor=GRID_COLOR, zerolinecolor=GRID_COLOR, tickfont=dict(size=11)),
-        yaxis=dict(gridcolor=GRID_COLOR, zerolinecolor=GRID_COLOR, tickfont=dict(size=11)),
+        xaxis=dict(gridcolor=GRID_COLOR, zerolinecolor=GRID_COLOR, tickfont=dict(size=11, color=FONT_COLOR), linecolor=GRID_COLOR),
+        yaxis=dict(gridcolor=GRID_COLOR, zerolinecolor=GRID_COLOR, tickfont=dict(size=11, color=FONT_COLOR), linecolor=GRID_COLOR),
     )
     return fig
 
@@ -311,7 +326,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("""
-    <small style='color:#5a7a90'>
+    <small style='color:#64748b'>
     <b>Keterangan:</b><br>
     🟢 BAIK: ISPU 0–50<br>
     🟡 SEDANG: 51–100<br>
@@ -419,7 +434,7 @@ with tab1:
             textposition="outside",
             hovertemplate="<b>%{y}</b><br>Avg ISPU: %{x:.1f}<extra></extra>",
         ))
-        fig_stn.add_vline(x=100, line_dash="dash", line_color="#f87171", annotation_text="Batas Tidak Sehat (100)")
+        fig_stn.add_vline(x=100, line_dash="dash", line_color="#dc2626", annotation_text="Batas Tidak Sehat (100)")
         fig_stn.update_layout(
             title=dict(text="Rata-rata Nilai ISPU Harian", font=dict(size=13, color=FONT_COLOR)),
             xaxis_title="Rata-rata ISPU",
@@ -440,7 +455,7 @@ with tab1:
             x=yearly["Tahun"], y=yearly["Rata-rata"],
             mode="lines+markers",
             name="Rata-rata", line=dict(color=ACCENT_BLUE, width=3),
-            fill="tozeroy", fillcolor="rgba(0,212,255,0.08)",
+            fill="tozeroy", fillcolor="rgba(37,99,235,0.08)",
             marker=dict(size=8),
         ))
         fig_trend.add_trace(go.Scatter(
@@ -448,8 +463,8 @@ with tab1:
             mode="lines", name="Median",
             line=dict(color=ACCENT_AMBER, width=2, dash="dash"),
         ))
-        fig_trend.add_hline(y=100, line_dash="dot", line_color="#f87171",
-                            annotation_text="Batas TIDAK SEHAT", annotation_font_color="#f87171")
+        fig_trend.add_hline(y=100, line_dash="dot", line_color="#dc2626",
+                            annotation_text="Batas TIDAK SEHAT", annotation_font_color="#dc2626")
         fig_trend.update_layout(
             title=dict(text="Perkembangan ISPU 2010–2023", font=dict(size=13, color=FONT_COLOR)),
             xaxis_title="Tahun", yaxis_title="Nilai ISPU",
@@ -474,7 +489,7 @@ with tab1:
         fig_pie.update_layout(
             title=dict(text="Porsi sebagai Pencemar Kritis", font=dict(size=13, color=FONT_COLOR)),
             annotations=[dict(text=f"<b>{len(dff):,}</b><br>hari", x=0.5, y=0.5,
-                              font_size=14, showarrow=False, font_color=FONT_COLOR)],
+                              font_size=14, showarrow=False, font_color='#334155')],
         )
         apply_dark_theme(fig_pie, height=340, showlegend=False)
         st.plotly_chart(fig_pie, use_container_width=True)
@@ -553,9 +568,9 @@ with tab2:
             hovertemplate=f"<b>{stn}</b><br>{x_lbl}: %{{x}}<br>ISPU: %{{y:.1f}}<extra></extra>",
         ))
 
-    fig_tren.add_hline(y=50,  line_dash="dot", line_color="#4ade80",  annotation_text="50 — Batas SEDANG")
-    fig_tren.add_hline(y=100, line_dash="dot", line_color="#f87171",  annotation_text="100 — Batas TDK SEHAT")
-    fig_tren.add_hline(y=200, line_dash="dot", line_color="#e879f9",  annotation_text="200 — Batas STS")
+    fig_tren.add_hline(y=50,  line_dash="dot", line_color="#16a34a",  annotation_text="50 — Batas SEDANG")
+    fig_tren.add_hline(y=100, line_dash="dot", line_color="#dc2626",  annotation_text="100 — Batas TDK SEHAT")
+    fig_tren.add_hline(y=200, line_dash="dot", line_color="#9333ea",  annotation_text="200 — Batas STS")
 
     fig_tren.update_layout(
         title=dict(text=f"Tren ISPU — Granularitas {granularity}", font=dict(size=14, color=FONT_COLOR)),
@@ -612,7 +627,7 @@ with tab2:
         fig_roll.add_trace(go.Scatter(
             x=daily_all["tanggal"], y=daily_all["max"],
             mode="lines", name="Harian",
-            line=dict(color="rgba(0,212,255,0.25)", width=1),
+            line=dict(color="rgba(37,99,235,0.3)", width=1),
         ))
         fig_roll.add_trace(go.Scatter(
             x=daily_all["tanggal"], y=daily_all["roll30"],
@@ -632,7 +647,7 @@ with tab2:
                 boxmean=True,
                 marker_color=ACCENT_BLUE,
                 line_color=ACCENT_BLUE,
-                fillcolor="rgba(0,212,255,0.15)",
+                fillcolor="rgba(37,99,235,0.1)",
             ))
         apply_dark_theme(fig_box, height=300, showlegend=False)
         fig_box.update_layout(xaxis_title="Tahun", yaxis_title="Nilai ISPU")
@@ -704,9 +719,9 @@ with tab3:
         fig_radar.update_layout(
             title=dict(text="Profil Parameter per Stasiun", font=dict(size=13, color=FONT_COLOR)),
             polar=dict(
-                bgcolor=CHART_BG,
-                angularaxis=dict(color=FONT_COLOR, gridcolor=GRID_COLOR),
-                radialaxis=dict(color=FONT_COLOR, gridcolor=GRID_COLOR),
+                bgcolor="#f8fafc",
+                angularaxis=dict(color="#334155", gridcolor="#e2e8f0"),
+                radialaxis=dict(color="#334155", gridcolor="#e2e8f0"),
             ),
         )
         apply_dark_theme(fig_radar, height=380)
@@ -756,7 +771,7 @@ with tab3:
             texttemplate="%{text}",
             textfont=dict(size=9),
             hovertemplate="<b>%{y}</b><br>Tahun %{x}<br>ISPU: %{z:.1f}<extra></extra>",
-            colorbar=dict(title="ISPU", tickfont=dict(color=FONT_COLOR)),
+            colorbar=dict(title="ISPU", tickfont=dict(color="#334155")),
         ))
         fig_heat.update_layout(
             title=dict(text="Rata-rata ISPU per Stasiun per Tahun", font=dict(size=13, color=FONT_COLOR)),
@@ -779,16 +794,16 @@ with tab3:
     stn_summary.columns = ["Stasiun", "Rata-rata ISPU", "Median", "Maks", "Std Dev", "% Tidak Sehat+", "% BAIK"]
     def color_ispu(val):
         if isinstance(val, float):
-            if val >= 100: return "background-color: #4a1c1c; color: #f87171"
-            elif val >= 75: return "background-color: #3d3010; color: #fbbf24"
-            else: return "background-color: #1a3a20; color: #4ade80"
+            if val >= 100: return "background-color: #fee2e2; color: #b91c1c"
+            elif val >= 75: return "background-color: #fef9c3; color: #a16207"
+            else: return "background-color: #dcfce7; color: #15803d"
         return ""
 
     def color_pct_unhealthy(val):
         if isinstance(val, float):
-            if val >= 30: return "background-color: #4a1c1c; color: #f87171"
-            elif val >= 15: return "background-color: #3d2010; color: #f97316"
-            else: return "background-color: #1a3a20; color: #4ade80"
+            if val >= 30: return "background-color: #fee2e2; color: #b91c1c"
+            elif val >= 15: return "background-color: #ffedd5; color: #c2410c"
+            else: return "background-color: #dcfce7; color: #15803d"
         return ""
 
     styled_stn = stn_summary.style \
@@ -899,11 +914,11 @@ with tab4:
             texttemplate="%{text}",
             textfont=dict(size=10),
             hovertemplate="<b>%{y}</b><br>%{x}: %{z:.0f} hari<extra></extra>",
-            colorbar=dict(title="Frekuensi", tickfont=dict(color=FONT_COLOR)),
+            colorbar=dict(title="Frekuensi", tickfont=dict(color="#334155")),
         ))
         fig_pheat.update_layout(
             title=dict(text="Frekuensi Kemunculan Pencemar per Bulan", font=dict(size=13, color=FONT_COLOR)),
-            paper_bgcolor=PAPER_BG, plot_bgcolor=CHART_BG,
+            paper_bgcolor=PAPER_BG, plot_bgcolor="#f8fafc",
             font=dict(color=FONT_COLOR),
             margin=dict(l=80, r=20, t=50, b=50),
         )
@@ -927,7 +942,7 @@ with tab4:
         texttemplate="%{text}",
         textfont=dict(size=11),
         hovertemplate="<b>%{x} × %{y}</b><br>Korelasi: %{z:.3f}<extra></extra>",
-        colorbar=dict(title="r", tickfont=dict(color=FONT_COLOR)),
+        colorbar=dict(title="r", tickfont=dict(color="#334155")),
     ))
     fig_corr.update_layout(
         title=dict(text="Matriks Korelasi Parameter Pencemar", font=dict(size=13, color=FONT_COLOR)),
@@ -992,7 +1007,7 @@ with tab5:
             line=dict(color=ACCENT_BLUE, width=2, dash="dash"),
             marker=dict(size=7),
         ))
-        fig_month.add_hline(y=100, line_dash="dot", line_color="#f87171", annotation_text="Batas TDK SEHAT")
+        fig_month.add_hline(y=100, line_dash="dot", line_color="#dc2626", annotation_text="Batas TDK SEHAT")
         fig_month.update_layout(
             title=dict(text="Rata-rata ISPU Bulanan (Semua Tahun)", font=dict(size=13, color=FONT_COLOR)),
             xaxis=dict(categoryorder="array", categoryarray=month_order),
@@ -1021,7 +1036,7 @@ with tab5:
             texttemplate="%{text:.0f}",
             textfont=dict(size=9),
             hovertemplate="<b>%{y} — %{x}</b><br>ISPU: %{z:.1f}<extra></extra>",
-            colorbar=dict(title="ISPU", tickfont=dict(color=FONT_COLOR)),
+            colorbar=dict(title="ISPU", tickfont=dict(color="#334155")),
         ))
         fig_sheat.update_layout(
             title=dict(text="Heatmap Pola Musiman ISPU (Tahun × Bulan)", font=dict(size=13, color=FONT_COLOR)),
@@ -1077,9 +1092,9 @@ with tab5:
         fig_polar.update_layout(
             title=dict(text="Pola Radial ISPU Bulanan", font=dict(size=13, color=FONT_COLOR)),
             polar=dict(
-                bgcolor=CHART_BG,
-                angularaxis=dict(color=FONT_COLOR, gridcolor=GRID_COLOR),
-                radialaxis=dict(color=FONT_COLOR, gridcolor=GRID_COLOR),
+                bgcolor="#f8fafc",
+                angularaxis=dict(color="#334155", gridcolor="#e2e8f0"),
+                radialaxis=dict(color="#334155", gridcolor="#e2e8f0"),
             ),
         )
         apply_dark_theme(fig_polar, height=400)
@@ -1126,9 +1141,9 @@ with tab5:
 
         def color_ispu_val(val):
             if isinstance(val, float):
-                if val >= 100: return "background-color: #4a1c1c; color: #f87171"
-                elif val >= 75: return "background-color: #3d3010; color: #fbbf24"
-                else: return "background-color: #1a3a20; color: #4ade80"
+                if val >= 100: return "background-color: #fee2e2; color: #b91c1c"
+                elif val >= 75: return "background-color: #fef9c3; color: #a16207"
+                else: return "background-color: #dcfce7; color: #15803d"
             return ""
 
         styled_bw = df_bw.style \
@@ -1153,7 +1168,7 @@ with tab5:
 # ─────────────────────────────────────────────
 st.markdown("---")
 st.markdown("""
-<div style='text-align:center; color:#5a7a90; font-size:0.8rem; padding: 12px;'>
+<div style='text-align:center; color:#64748b; font-size:0.8rem; padding: 12px;'>
     Dashboard ISPU Jakarta • Data: Dinas Lingkungan Hidup DKI Jakarta (2010–2023) •
     5 Stasiun SPKU: DKI1 Bunderan HI | DKI2 Kelapa Gading | DKI3 Jagakarsa | DKI4 Lubang Buaya | DKI5 Kebon Jeruk
 </div>
