@@ -792,8 +792,8 @@ with tab3:
         return ""
 
     styled_stn = stn_summary.style \
-        .applymap(color_ispu, subset=["Rata-rata ISPU"]) \
-        .applymap(color_pct_unhealthy, subset=["% Tidak Sehat+"])
+        .map(color_ispu, subset=["Rata-rata ISPU"]) \
+        .map(color_pct_unhealthy, subset=["% Tidak Sehat+"])
     st.dataframe(styled_stn, use_container_width=True, hide_index=True)
 
     st.markdown("""
@@ -1132,7 +1132,7 @@ with tab5:
             return ""
 
         styled_bw = df_bw.style \
-            .applymap(color_ispu_val, subset=["ISPU Terbaik", "ISPU Terburuk"])
+            .map(color_ispu_val, subset=["ISPU Terbaik", "ISPU Terburuk"])
         st.dataframe(styled_bw, use_container_width=True, hide_index=True)
 
     st.markdown("""
